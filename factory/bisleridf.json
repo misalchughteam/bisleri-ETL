@@ -1,0 +1,9 @@
+{
+	"name": "bisleridf",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "33f855a0-65ee-4735-ba4d-07e1ccbca538",
+		"tenantId": "90d12e33-ad5e-4e82-8b5e-82bff0658ae0"
+	}
+}
