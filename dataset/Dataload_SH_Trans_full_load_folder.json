@@ -1,5 +1,5 @@
 {
-	"name": "Dataload_Trans_full_load_folder",
+	"name": "Dataload_SH_Trans_full_load_folder",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Bisleri_SA_LS",
@@ -10,6 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat('Sales_Header',formatDateTime(convertTimeZone(utcNow(),'UTC','India Standard Time'),'yyyy-MM-dd hh:mm:ss.sss'),'.csv')",
+					"type": "Expression"
+				},
 				"folderPath": "Transaction /Full-Load",
 				"fileSystem": "data-lake"
 			},
