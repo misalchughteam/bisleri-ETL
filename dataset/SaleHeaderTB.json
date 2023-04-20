@@ -1,0 +1,99 @@
+{
+	"name": "SaleHeaderTB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Onprem_SQL_Server",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "InvoiceNo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Excise_InvoiceNo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Customer_No",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Posted_CustomerCategory",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Order Date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Posting Date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DACommSalesPerson",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Route Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Shortcut Dimension 1 Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Shortcut Dimension 2 Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Order No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Vehicle Type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Ship-to Address",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Ship-to Address 2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Ship-to City",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Ship-to Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Ship-to Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Customer Group Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Last Modified On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "SalesHeader_R2"
+		}
+	}
+}
