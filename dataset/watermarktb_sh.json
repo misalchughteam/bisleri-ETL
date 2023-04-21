@@ -1,5 +1,5 @@
 {
-	"name": "watermarktb",
+	"name": "watermarktb_sh",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Azure_SQLDB",

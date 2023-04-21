@@ -46,7 +46,7 @@
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "watermarktb",
+						"referenceName": "watermarktb_sh",
 						"type": "DatasetReference"
 					}
 				}
