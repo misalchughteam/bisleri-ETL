@@ -1,0 +1,171 @@
+{
+	"name": "SalesLineTB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Onprem_SQL_Server",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "InvoiceNo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Sell-to Customer No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Amount",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Tax Amount",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Amount To Customer",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Document Date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Bill-to Customer No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SLineNo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Location Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Shipment Date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Description 2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Unit of Measure",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Quantity",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Quantity (Base)",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Qty_ per Unit of Measure",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Discount Structure Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Fat Catagory",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Unit Price",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Unit Cost (LCY)",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Unit of Measure Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ItemCategry",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Free Supply",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Freight Discount",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Discount Structure Amount",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Tax Area Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Conversion Cost",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PVC_PPR Cost",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Scheme Reason",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Charges To Customer",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Tax Group Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Excise Amount",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Non-Dispatch Reason",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Last Modified On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "SIL_Key",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "SalesLine_R2"
+		}
+	}
+}
