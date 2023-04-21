@@ -1,0 +1,31 @@
+{
+	"name": "watermarktb_sl",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure_SQLDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "TableName",
+				"type": "varchar"
+			},
+			{
+				"name": "Last_Modified_Date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Invoice_No",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "watermarktableforSL"
+		}
+	}
+}
