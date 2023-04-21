@@ -18,7 +18,7 @@
 					"source": {
 						"type": "SqlServerSource",
 						"sqlReaderQuery": {
-							"value": "Select distinct \n\t[InvoiceNo],\n\t[Last Modified On]\nfrom [Bisleri].[dbo].[SalesLine_R2]\nwhere [Last Modified On] = (select max([Last Modified On]) from [Bisleri].[dbo].[SalesLine_R2])",
+							"value": "Select distinct \n\t[InvoiceNo],\n\t[Last Modified On] as Last_Modified_On\nfrom [Bisleri].[dbo].[SalesLine_R2]\nwhere [Last Modified On] = (select max([Last Modified On]) from [Bisleri].[dbo].[SalesLine_R2])",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -28,7 +28,7 @@
 						"referenceName": "SalesLineTB",
 						"type": "DatasetReference"
 					},
-					"firstRowOnly": false
+					"firstRowOnly": true
 				}
 			},
 			{
@@ -53,7 +53,7 @@
 						"referenceName": "watermarktb_sl",
 						"type": "DatasetReference"
 					},
-					"firstRowOnly": false
+					"firstRowOnly": true
 				}
 			},
 			{
@@ -85,7 +85,7 @@
 					"source": {
 						"type": "SqlServerSource",
 						"sqlReaderQuery": {
-							"value": "Select \n\t* \nfrom [dbo].[SalesLine_R2] \nwhere \n\t[InvoiceNo] <> '@{activity('LookupOldWaterMarkActivity').output.firstRow.Invoice_No}' and [Last Modified On] <= '@{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue}'",
+							"value": "Select \n\t* \nfrom [dbo].[SalesLine_R2] \nwhere \n\t[InvoiceNo] <> '@{activity('LookupOldWaterMarkActivity').output.firstRow.Invoice_No}' and [Last Modified On] <= '@{activity('LookupNewWaterMarkActivity').output.firstRow.Last_Modified_On}'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -149,14 +149,14 @@
 					"storedProcedureParameters": {
 						"InvoiceNo": {
 							"value": {
-								"value": "@{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue}",
+								"value": "@{activity('LookupNewWaterMarkActivity').output.firstRow.InvoiceNo}",
 								"type": "Expression"
 							},
 							"type": "String"
 						},
 						"LastModifiedtime": {
 							"value": {
-								"value": "@{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue}",
+								"value": "@{activity('LookupNewWaterMarkActivity').output.firstRow.Last_Modified_On}",
 								"type": "Expression"
 							},
 							"type": "DateTime"
