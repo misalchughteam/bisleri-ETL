@@ -1,0 +1,17 @@
+{
+	"name": "Onprem_SQL_Server",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=10558-MISAL\\SQLEXPRESS;initial catalog=Bisleri",
+			"userName": "TEAMCOMPUTERS\\10558",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkMmVlYmZlYS1jM2M5LTRiOTgtYTBmOC03OTgxNTYxYTQxMWMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "Misal-sys-IR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
