@@ -24,6 +24,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -78,6 +79,7 @@
 								],
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
@@ -129,7 +131,7 @@
 										],
 										"userProperties": [],
 										"typeProperties": {
-											"variableName": "latestdate",
+											"variableName": "filename",
 											"value": {
 												"value": "@activity('Get Metadata2').output.itemName",
 												"type": "Expression"
@@ -157,23 +159,32 @@
 										"userProperties": [],
 										"typeProperties": {
 											"source": {
-												"type": "AzureSqlSource",
-												"additionalColumns": [
-													{
-														"name": "name",
-														"value": {
-															"value": "@variables('filename')",
-															"type": "Expression"
-														}
-													}
-												],
-												"queryTimeout": "02:00:00",
-												"partitionOption": "None"
+												"type": "DelimitedTextSource",
+												"storeSettings": {
+													"type": "AzureBlobFSReadSettings",
+													"recursive": true,
+													"wildcardFolderPath": "Transaction / Incremental-Load / Sales Header",
+													"wildcardFileName": {
+														"value": "@variables('filename')",
+														"type": "Expression"
+													},
+													"enablePartitionDiscovery": false
+												},
+												"formatSettings": {
+													"type": "DelimitedTextReadSettings"
+												}
 											},
 											"sink": {
-												"type": "AzureSqlSink",
-												"writeBehavior": "insert",
-												"sqlWriterUseTableLock": false
+												"type": "DelimitedTextSink",
+												"storeSettings": {
+													"type": "AzureBlobFSWriteSettings",
+													"copyBehavior": "MergeFiles"
+												},
+												"formatSettings": {
+													"type": "DelimitedTextWriteSettings",
+													"quoteAllText": true,
+													"fileExtension": ".txt"
+												}
 											},
 											"enableStaging": false,
 											"translator": {
@@ -187,13 +198,13 @@
 										},
 										"inputs": [
 											{
-												"referenceName": "AzureSqlTable1",
+												"referenceName": "DelimitedText5",
 												"type": "DatasetReference"
 											}
 										],
 										"outputs": [
 											{
-												"referenceName": "AzureSqlTable1",
+												"referenceName": "DelimitedText4",
 												"type": "DatasetReference"
 											}
 										]
