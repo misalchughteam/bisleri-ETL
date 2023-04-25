@@ -5,11 +5,20 @@
 			"referenceName": "Bisleri_SA_LS",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"filename": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
 				"folderPath": "Transaction /Incremental-Load/Sales Header",
 				"fileSystem": "data-lake"
 			},
