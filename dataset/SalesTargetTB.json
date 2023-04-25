@@ -1,0 +1,71 @@
+{
+	"name": "SalesTargetTB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Onprem_SQL_Server",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Customer Group Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Customer No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "End Date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Item No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Item Unit of Measure",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Month",
+				"type": "nvarchar"
+			},
+			{
+				"name": "T_ROUTE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Start Date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Target Qty",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DLP Target Qty",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Year",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Last Modified",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "SalesTarget_R2"
+		}
+	}
+}
