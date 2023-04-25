@@ -1,5 +1,5 @@
 {
-	"name": "Stage1_SalesTarget_Pipeline_temp",
+	"name": "Stage1_SalesTarget__Incre_Pipeline",
 	"properties": {
 		"activities": [
 			{
@@ -18,7 +18,7 @@
 					"source": {
 						"type": "SqlServerSource",
 						"sqlReaderQuery": {
-							"value": "select * from [dbo].[SalesTarget_R2] where year = '2023' and MONTH in ('1', '2', '3')",
+							"value": "Select * from [dbo].[SalesTarget_R2] \n  where \n  [Start Date] = adddays(utcnow(),-31,'yyyy-MM-dd hh:mm:ss.sss')",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",

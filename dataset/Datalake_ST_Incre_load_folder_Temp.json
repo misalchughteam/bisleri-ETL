@@ -1,0 +1,27 @@
+{
+	"name": "Datalake_ST_Incre_load_folder_Temp",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Bisleri_SA_LS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat('Sales_Target_Temp',formatDateTime(convertTimeZone(utcNow(),'UTC','India Standard Time'),'yyyy-MM-dd hh:mm:ss.sss'),'.csv')",
+					"type": "Expression"
+				},
+				"folderPath": "Transaction /Incremental-Load/Sales Target",
+				"fileSystem": "data-lake"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
